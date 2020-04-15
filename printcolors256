@@ -1,0 +1,8 @@
+#!/bin/bash
+
+clear="\e[0m"
+
+for c in {0..254}; do
+	esc="\e[38;5;${c}m"
+	printf "C: %b%s%b\n" "$esc" "$esc" "$clear"
+done
