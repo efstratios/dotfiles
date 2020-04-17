@@ -2,6 +2,12 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+declare -r __col_lgrey='\e[38;5;247m'
+declare -r __ps1_col_red='\[\e[38;5;197m\]'
+declare -r __ps1_col_green='\[\e[38;5;70m\]'
+declare -r __ps1_col_lgreen='\[\e[38;5;46m\]'
+declare -r __ps1_col_lgrey="\[$__col_lgrey\]"
+# declare -r __ps1_col_cyan='\[\e[38;5;81m\]'
 declare -r __ps1_col_reset='\[\e[m\]'
 
 # append to the history file, don't overwrite it
@@ -16,7 +22,6 @@ HISTSIZE=10000
 HISTFILESIZE=25000
 # don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth:erasedups
-
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -84,7 +89,7 @@ __ps_opt_hostname() {
 	fi
 }
 
-PS1="\\n${__ps1_col_cyan}\${debian_chroot:+(\$debian_chroot)}\\w${__ps1_col_reset}${__ps1_col_lgrey}\$(__ps_widgets_show)${__ps1_col_reset}\n\$(__ps_venv)${__ps1_col_lgrey}\$(__ps_opt_hostname)\\\$${__ps1_col_reset} "
+PS1="\\n${__ps1_col_lgrey}\${debian_chroot:+(\$debian_chroot)}\\w${__ps1_col_reset}${__ps1_col_lgreen}\$(__ps_widgets_show)${__ps1_col_reset}\n\$(__ps_venv)${__ps1_col_lgreen}\$(__ps_opt_hostname)\\\$${__ps1_col_reset} "
 
 
 # Title changing functionality {{{
@@ -181,6 +186,7 @@ alias l='ls -CF --group-directories-first --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias cat='cat -v'
 
 # my aliases #stra
 alias g='git'
@@ -212,3 +218,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
+LS_COLORS=$LS_COLORS:'di=1;38;5;247' ; export LS_COLORS
