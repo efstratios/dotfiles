@@ -193,6 +193,8 @@ alias g='git'
 alias pwd_gen='gpg --gen-random --armor 1 14'
 alias ud='sudo apt update; sudo apt upgrade -y'
 alias cln='sudo apt autoremove -y;sudo apt autoclean'
+alias log_off='sudo pkill -KILL -u stra'
+alias nse='ls /usr/share/nmap/scripts | grep'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
