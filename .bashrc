@@ -173,13 +173,6 @@ __change_title_preexec() {
 }
 
 trap '__change_title_preexec "$_"' DEBUG
-# }}}
-
-# start tmux on every shell/login.
-
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux
-fi
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
