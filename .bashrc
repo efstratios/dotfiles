@@ -190,7 +190,7 @@ alias cat='cat -v'
 
 # my aliases #stra
 alias g='git'
-alias pwd_gen='gpg --gen-random --armor 1 14'
+alias pwd_gen='< /dev/urandom tr -cd "[:print:]" | head -c 32; echo'
 alias ud='sudo apt update; sudo apt upgrade -y'
 alias cln='sudo apt autoremove -y;sudo apt autoclean'
 alias log_off='sudo pkill -KILL -u stra'
