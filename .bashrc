@@ -188,12 +188,12 @@ alias egrep='egrep --color=auto'
 alias grepip='grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b"' # Grep out a list of IPs from unstructured data with this alias.
 alias cat='cat -v'
 
-# my aliases #stra
+# my aliases 
 alias g='git'
 alias pwd_gen='< /dev/urandom tr -cd "[:print:]" | head -c 32; echo'
 alias ud='sudo apt update; sudo apt upgrade -y'
 alias cln='sudo apt autoremove -y;sudo apt autoclean'
-alias log_off='sudo pkill -KILL -u stra'
+alias log_off='sudo pkill -KILL -u "$USER"'
 alias nse='ls /usr/share/nmap/scripts | grep'
 
 # Add an "alert" alias for long running commands.  Use like so:
