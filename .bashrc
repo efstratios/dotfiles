@@ -195,6 +195,11 @@ alias ud='sudo apt update; sudo apt upgrade -y'
 alias cln='sudo apt autoremove -y;sudo apt autoclean'
 alias log_off='sudo pkill -KILL -u "$USER"'
 alias nse='ls /usr/share/nmap/scripts | grep'
+# update values for the commands below
+alias sound='pactl set-default-sink <sink_name_0>;pactl set-default-sink <sink_name_1>;pacmd set-sink-port <value> <sink_name_1>'
+alias oc='/<path>/oc-CLI/oc'
+alias ibmcloud='/<path>/IBM_Cloud_CLI/ibmcloud'
+alias roxctl='/<path>/roxctl'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
