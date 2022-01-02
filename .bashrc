@@ -3,10 +3,13 @@
 # for examples
 
 declare -r __col_lgrey='\e[38;5;247m'
+declare -r __col_dpurple='\e[38;5;60m'
+declare -r __ps1_col_black='\[\e[38;5;00m\]'
 declare -r __ps1_col_red='\[\e[38;5;197m\]'
 declare -r __ps1_col_green='\[\e[38;5;70m\]'
 declare -r __ps1_col_lgreen='\[\e[38;5;46m\]'
 declare -r __ps1_col_lgrey="\[$__col_lgrey\]"
+declare -r __ps1_col_dpurple="\[$__col_dpurple\]"
 # declare -r __ps1_col_cyan='\[\e[38;5;81m\]'
 declare -r __ps1_col_reset='\[\e[m\]'
 
@@ -89,7 +92,7 @@ __ps_opt_hostname() {
 	fi
 }
 
-PS1="\\n${__ps1_col_lgrey}\${debian_chroot:+(\$debian_chroot)}\\w${__ps1_col_reset}${__ps1_col_lgreen}\$(__ps_widgets_show)${__ps1_col_reset}\n\$(__ps_venv)${__ps1_col_lgreen}\$(__ps_opt_hostname)\\\$${__ps1_col_reset} "
+PS1="\\n${__ps1_col_dpurple}\${debian_chroot:+(\$debian_chroot)}\\w${__ps1_col_reset}${__ps1_col_black}\$(__ps_widgets_show)${__ps1_col_reset}\n\$(__ps_venv)${__ps1_col_black}\$(__ps_opt_hostname)\\\$${__ps1_col_reset} "
 
 
 # Title changing functionality {{{
@@ -190,6 +193,7 @@ alias cat='cat -v'
 
 # my aliases 
 alias g='git'
+alias d=docker
 alias pwd_gen='< /dev/urandom tr -cd "[:print:]" | head -c 32; echo'
 alias ud='sudo apt update; sudo apt upgrade -y'
 alias cln='sudo apt autoremove -y;sudo apt autoclean'
@@ -197,6 +201,7 @@ alias log_off='sudo pkill -KILL -u "$USER"'
 alias nse='ls /usr/share/nmap/scripts | grep'
 # update values for the commands below
 alias sound='pactl set-default-sink <sink_name_0>;pactl set-default-sink <sink_name_1>;pacmd set-sink-port <value> <sink_name_1>'
+alias aria2cM='aria2c -x4 -k1M'
 alias mvera='veracrypt /path/ /path/'
 alias oc='/<path>/oc-CLI/oc'
 alias ibmcloud='/<path>/IBM_Cloud_CLI/ibmcloud'
@@ -226,4 +231,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-LS_COLORS=$LS_COLORS:'di=1;38;5;247' ; export LS_COLORS
+LS_COLORS=$LS_COLORS:'di=1;38;5;60' ; export LS_COLORS
