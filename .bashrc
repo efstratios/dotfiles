@@ -196,7 +196,6 @@ alias g='git'
 alias d=docker
 alias pwd_gen='< /dev/urandom tr -cd "[:print:]" | head -c 32; echo'
 alias ud="sudo -- sh -c 'apt update ; apt full-upgrade -y ; apt autoremove -y ; apt purge ; apt clean ; snap refresh'"
-alias cln='sudo apt autoremove -y;sudo apt autoclean'
 alias log_off='sudo pkill -KILL -u "$USER"'
 alias nse='ls /usr/share/nmap/scripts | grep'
 # update values for the commands below
